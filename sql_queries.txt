@@ -1,0 +1,53 @@
+1. Select the title of all games
+
+A: SELECT title FROM Games;
+
+2. Show all the years in the database.
+
+A. SELECT DISTINCT year FROM Games;
+
+3. Show the title of each game made by 'Rare'.
+
+A. SELECT title FROM Games WHERE developers = 'Rare';
+
+4. Select all games that were made before 1998.
+
+A. SELECT * FROM games WHERE year < 1998;
+
+5. Find the average release year of all games.
+
+A. SELECT ROUND(avg(year)) FROM Games;
+
+6. Show the developer names of each game, in alphabetical order.
+
+A. SELECT developers, title FROM Games ORDER BY developers;
+
+7. Show the titles of games not made by 'Nintendo EAD'.
+
+A. SELECT developers, title FROM Games WHERE NOT developers = 'Nintendo EAD' ORDER BY developers;
+
+8. Add the the game 'F-Zero X', released in 1998, made by 'Nintendo EAD', and with the genre 'Racing'.
+
+A. INSERT INTO Games (title, year, developers, genre) VALUES('F-Zero-X', 1998, 'Nintendo EAD', 'Racing');
+
+9. Show all the game titles in descending order of their release year.
+
+A. SELECT title, year FROM Games ORDER BY year DESC;
+
+10. Remove all games not made by 'Hudson Soft'.
+
+A: DELETE FROM Games WHERE NOT developers = 'Hudson';
+
+11. Show the average release year for games that were made by Rare or have the title Tony Hawk''s Pro Skater in order of their title
+
+A. SELECT ROUND(avg(year)) FROM Games WHERE developers = 'Rare' or title = 'Tony Hawk''s Pro Skater';
+
+12. Show the id and title and genre of all games that were either:
+
+Made before 1997,
+
+Made by Hal Laboratory,
+
+Or, have the genre Platforming AND are made by Rare.
+
+A. SELECT id, title, genre FROM Games WHERE (year < 1997 AND developers = 'Hal Laboratory') OR (genre = 'Platforming' AND developers = 'Rare');
